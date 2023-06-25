@@ -1,0 +1,6 @@
+<Entity>
+    <HitEffectComponent 
+        effect_hit="LOAD_ENTITY"
+        value_string="mods/evaisa.enchantments/files/enchantment_data/crowdcontrol/spawn_gas.xml" >
+	</HitEffectComponent >
+</Entity>

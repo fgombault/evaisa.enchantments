@@ -1,0 +1,17 @@
+<Entity>
+
+	<LifetimeComponent
+		_enabled="1"
+		lifetime="301"
+	>
+	</LifetimeComponent>
+
+    <LuaComponent 
+        execute_on_added="1"
+        script_source_file="mods/evaisa.enchantments/files/enchantment_data/bleed/bleed.lua"
+        execute_every_n_frame="20"
+        execute_times="15"
+    >
+   </LuaComponent>
+
+</Entity>

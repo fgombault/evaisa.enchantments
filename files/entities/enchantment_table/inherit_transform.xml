@@ -1,0 +1,9 @@
+<Entity>
+	<InheritTransformComponent
+		_tags="enabled_in_hand,enabled_in_inventory" >
+	  <Transform 
+		position.x="8" 
+		position.y="0" >
+	  </Transform>
+	</InheritTransformComponent>
+</Entity>

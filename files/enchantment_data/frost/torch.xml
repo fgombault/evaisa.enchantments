@@ -1,0 +1,187 @@
+<Entity>
+
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand" >
+	  <Transform 
+		position.x="8" 
+		position.y="0" >
+	  </Transform>
+	</InheritTransformComponent>
+
+	<ParticleEmitterComponent 
+		_tags="enabled_in_hand,item_identified"
+		emitted_material_name="spark_blue"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-2"
+		x_pos_offset_max="2"
+		y_pos_offset_min="2"
+		y_pos_offset_max="-2"
+		x_vel_min="-2"
+		x_vel_max="2"
+		y_vel_min="-20"
+		y_vel_max="-10"
+		count_min="1"
+		count_max="2"
+		lifetime_min="0.4"
+		lifetime_max="0.6"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="30"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_hand,item_identified"
+		emitted_material_name="spark_blue"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-2"
+		x_pos_offset_max="2"
+		y_pos_offset_min="2"
+		y_pos_offset_max="-2"
+		x_vel_min="-2"
+		x_vel_max="2"
+		y_vel_min="-20"
+		y_vel_max="-10"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.4"
+		lifetime_max="0.6"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="25"
+		emission_interval_max_frames="45"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_hand,item_identified"
+		emitted_material_name="blood_cold_vapour"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-2"
+		x_pos_offset_max="2"
+		y_pos_offset_min="2"
+		y_pos_offset_max="-2"
+		x_vel_min="-2"
+		x_vel_max="2"
+		y_vel_min="-20"
+		y_vel_max="-10"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.4"
+		lifetime_max="0.6"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="25"
+		emission_interval_max_frames="50"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<LightComponent 
+		_tags="enabled_in_hand,item_identified"
+		_enabled="1" 
+		radius="130"
+		fade_out_time="1.5" 
+		r="240"
+		g="180"
+		b="120" >
+	</LightComponent>
+
+	<LightComponent 
+		_tags="enabled_in_hand,item_identified"
+		_enabled="1" 
+		radius="16"
+		fade_out_time="1.5" 
+		r="255"
+		g="255"
+		b="255" >
+	</LightComponent>
+
+	<!-- real fire emitters -->
+
+	 <ParticleEmitterComponent 
+	    _tags="enabled_in_hand"
+	    emitted_material_name="blood_cold_vapour"
+	    offset.x="0"
+	    offset.y="0"
+	    x_pos_offset_min="0"
+	    x_pos_offset_max="0"
+	    y_pos_offset_min="-1"
+	    y_pos_offset_max="1"
+	    x_vel_min="-0"
+	    x_vel_max="0"
+	    y_vel_min="0"
+	    y_vel_max="0"
+	    count_min="5"
+	    count_max="5"
+	    lifetime_min="0.1"
+	    lifetime_max="0.3"
+	    create_real_particles="0"
+	    emit_cosmetic_particles="1"
+	    emission_interval_min_frames="80"
+	    emission_interval_max_frames="250" >
+	</ParticleEmitterComponent>
+	  
+	<ParticleEmitterComponent 
+	    _tags="enabled_in_hand"
+	    emitted_material_name="spark_blue"
+
+	    offset.x="0"
+	    offset.y="0"
+	    x_pos_offset_min="-1"
+	    x_pos_offset_max="1"
+	    y_pos_offset_min="-1"
+	    y_pos_offset_max="1"
+	    x_vel_min="-2"
+	    x_vel_max="2"
+	    y_vel_min="-20"
+	    y_vel_max="-10"
+	    count_min="4"
+	    count_max="6"
+	    lifetime_min="0.3"
+	    lifetime_max="0.4"
+	    create_real_particles="1"
+	    emit_cosmetic_particles="0"
+	    emission_interval_min_frames="10"
+	    emission_interval_max_frames="20" >
+	</ParticleEmitterComponent>
+	  
+	<ParticleEmitterComponent 
+	    _tags="enabled_in_hand"
+	    emitted_material_name="blood_cold_vapour"
+	    offset.x="0"
+	    offset.y="0"
+	    x_pos_offset_min="-1"
+	    x_pos_offset_max="1"
+	    y_pos_offset_min="-1"
+	    y_pos_offset_max="1"
+	    x_vel_min="-2"
+	    x_vel_max="2"
+	    y_vel_min="-20"
+	    y_vel_max="-10"
+	    count_min="1"
+	    count_max="2"
+	    lifetime_min="0.3"
+	    lifetime_max="0.4"
+	    create_real_particles="0"
+	    emit_cosmetic_particles="1"
+	    emission_interval_min_frames="15"
+	    emission_interval_max_frames="25"
+	    fire_cells_dont_ignite_damagemodel="1" >
+	</ParticleEmitterComponent>
+
+    <SpriteComponent 
+	    _tags="enabled_in_hand"
+        alpha="0.8"
+        image_file="data/particles/torch_fog_of_war_hole.xml"
+        smooth_filtering="1"
+        fog_of_war_hole="1"
+        has_special_scale="1"
+        special_scale_x="4"
+        special_scale_y="4" >
+    </SpriteComponent>
+
+</Entity>

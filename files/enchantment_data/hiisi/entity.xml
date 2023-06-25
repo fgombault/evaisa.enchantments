@@ -1,0 +1,18 @@
+<Entity>
+    <InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    <LuaComponent 
+		execute_on_added="1"
+		script_source_file="mods/evaisa.enchantments/files/enchantment_data/hiisi/find_targets.lua"
+		execute_every_n_frame="0"
+		execute_times="-1"
+        >
+   </LuaComponent>
+    <LuaComponent 
+		script_source_file="mods/evaisa.enchantments/files/enchantment_data/hiisi/remove_flags.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+        >
+   </LuaComponent>
+</Entity>

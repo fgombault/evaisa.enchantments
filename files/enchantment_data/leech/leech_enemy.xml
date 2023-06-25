@@ -1,0 +1,12 @@
+<Entity>
+
+    <LuaComponent 
+        _enabled="1" 
+        script_damage_received="mods/evaisa.enchantments/files/enchantment_data/leech/leech.lua"
+        remove_after_executed="1"
+        >
+   </LuaComponent>
+
+   
+</Entity>
+

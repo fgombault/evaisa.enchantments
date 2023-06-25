@@ -1,0 +1,3 @@
+Make noita together show enchantment names in bank.
+Always casts are bugged (noita together)
+Balancing - mana?

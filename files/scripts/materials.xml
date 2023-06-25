@@ -1,0 +1,90 @@
+<Materials> 
+	<!--
+	<CellDataChild
+		_parent="spark"
+		name=""
+		ui_name="Celestine Plasma"
+		wang_color="ff72acdb"
+	>
+		<Graphics
+			color="ff72acdb"
+		>
+		</Graphics>
+	</CellDataChild>
+		<CellDataChild
+			_parent="spark"
+			name="disable_jetpack_plasma"
+			ui_name="disable_jetpack_plasma"
+			wang_color="ff36a832"
+		>
+		<Graphics
+			color="ff36a832"
+		>
+		</Graphics>
+	</CellDataChild>
+  -->
+
+  	<CellData 
+		name="ENCHANTMENTS_CROWD_CONTROL"
+		ui_name="Crowd Control"
+		tags="[gas]"
+		burnable="0"
+		density="0"
+		lifetime="50"
+		cell_type="gas"
+		liquid_static="1"
+		wang_color="80242151"
+		generates_smoke="0"
+		liquid_gravity="0.1"
+		liquid_sand="0"
+		on_fire="0"
+		requires_oxygen="0"
+		temperature_of_fire="60" 
+		gfx_glow="150"
+	>
+		<ParticleEffect
+			vel.y="-40"
+			vel_random.min_y="-20.21"
+			vel_random.max_y="-2.861"
+			vel_random.min_x="-6.667"
+			vel_random.max_x="6.667"
+			lifetime.min="0.3238"
+			lifetime.max="9.3238"
+			gravity.y="-100"
+			render_on_grid="1"
+			airflow_force="10"
+			airflow_scale="6.857"
+			draw_as_long="0"
+			friction="1.352"
+			probability="0.0343"
+		>
+		</ParticleEffect>
+		<Graphics 
+			color="40a11d1d"
+			>
+		</Graphics>
+		
+  	</CellData> 
+
+	<Reaction probability = "100"
+		input_cell1="ENCHANTMENTS_CROWD_CONTROL" input_cell2="air"
+		output_cell1="air" output_cell2="air"
+		fast_reaction="0"
+	>
+	<ExplosionConfig
+		camera_shake="0" 
+		damage="0"
+		cell_explosion_power="5"
+		cell_explosion_damage_required="3000"
+		cell_explosion_radius_min="1"
+		cell_explosion_radius_max="1"
+		cell_explosion_probability="1.1"
+		explosion_sprite="data/particles/dummy.xml"
+		load_this_entity="mods/evaisa.enchantments/files/enchantment_data/crowdcontrol/crowd_control.xml" 
+		ray_energy="1"
+		sparks_enabled="0"
+		stains_enabled="0"
+		>
+	</ExplosionConfig>
+	</Reaction>	  
+</Materials>

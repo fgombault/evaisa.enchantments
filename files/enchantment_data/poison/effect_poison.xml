@@ -1,0 +1,24 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="POISON"
+    	frames="600"
+    >
+	</GameEffectComponent >
+
+    <LuaComponent 
+		script_source_file="mods/evaisa.enchantments/files/enchantment_data/poison/add_icon.lua"
+		execute_every_n_frame="4"
+		remove_after_executed="1"
+        >
+   </LuaComponent>
+
+    <LuaComponent 
+		script_source_file="mods/evaisa.enchantments/files/enchantment_data/poison/remove_flags.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+        >
+   </LuaComponent>
+</Entity>
