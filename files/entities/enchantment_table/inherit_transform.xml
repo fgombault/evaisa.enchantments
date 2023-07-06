@@ -6,4 +6,13 @@
 		position.y="0" >
 	  </Transform>
 	</InheritTransformComponent>
+	<!--
+	<LuaComponent
+		_tags="enabled_in_hand,enabled_in_inventory,ui_stuff"
+		script_source_file="mods/evaisa.enchantments/files/scripts/module_ui.lua"
+		execute_every_n_frame="1"
+		execute_on_added="1"
+		enable_coroutines="1">
+	</LuaComponent>
+	-->
 </Entity>
