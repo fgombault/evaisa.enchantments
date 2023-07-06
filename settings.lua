@@ -1,10 +1,10 @@
-dofile("data/scripts/lib/mod_settings.lua") 
+dofile("data/scripts/lib/mod_settings.lua")
 
 
 
 local mod_id = "enchantments" -- This should match the name of your mod's folder.
-mod_settings_version = 1 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value. 
-mod_settings = 
+mod_settings_version = 1      -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value.
+mod_settings =
 {
 	{
 		category_id = "default_settings",
@@ -26,7 +26,8 @@ mod_settings =
 			{
 				id = "disable_altar",
 				ui_name = "Disable Altar",
-				ui_description = "Disable the altar altogether, enchantments can still spawn with items if Loot Enchantments is enabled.",
+				ui_description =
+				"Disable the altar altogether, enchantments can still spawn with items if Loot Enchantments is enabled.",
 				value_default = false,
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
@@ -138,61 +139,64 @@ mod_settings =
 	},
 }
 
-function ModSettingsUpdate( init_scope )
-	local old_version = mod_settings_get_version( mod_id ) 
-	mod_settings_update( mod_id, mod_settings, init_scope )
+function ModSettingsUpdate(init_scope)
+	local old_version = mod_settings_get_version(mod_id)
+	mod_settings_update(mod_id, mod_settings, init_scope)
 end
 
 function ModSettingsGuiCount()
-	return mod_settings_gui_count( mod_id, mod_settings )
+	return mod_settings_gui_count(mod_id, mod_settings)
 end
 
-function ModSettingsGui( gui, in_main_menu )
-	mod_settings_gui( mod_id, mod_settings, gui, in_main_menu )
+function ModSettingsGui(gui, in_main_menu)
+	-- print("IS THIS RUNNING??")
+
+	mod_settings_gui(mod_id, mod_settings, gui, in_main_menu)
 
 	screen_width, screen_height = GuiGetScreenDimensions(gui)
 
 	local id = 2512432
-	local function new_id() id = id + 1; return id end
+	local function new_id()
+		id = id + 1; return id
+	end
 
-	GuiOptionsAdd( gui, GUI_OPTION.NoPositionTween )
+	GuiOptionsAdd(gui, GUI_OPTION.NoPositionTween)
 
 	--GuiLayoutBeginVertical( gui, 0, 0, false, 0, 3 )
-	GuiColorSetForNextWidget( gui, 0.8, 0.8, 0.8, 1 )
-	if(not in_main_menu)then
+	GuiColorSetForNextWidget(gui, 0.8, 0.8, 0.8, 1)
+	if (not in_main_menu) then
 		dofile("mods/evaisa.enchantments/files/scripts/enchantment_list.lua")
-		GuiText( gui, -2, 8, "----- Enchantments ( "..tostring(#enchantments).." Loaded ) -----" )
+		GuiText(gui, -2, 8, "----- Enchantments ( " .. tostring(#enchantments) .. " Loaded ) -----")
 	else
-		GuiText( gui, -2, 8, "----- Enchantments -----" )
+		GuiText(gui, -2, 8, "----- Enchantments -----")
 	end
-	if(not in_main_menu)then
-
+	if (not in_main_menu) then
 		dofile("mods/evaisa.enchantments/files/scripts/enchantment_list.lua")
 		dofile("mods/evaisa.enchantments/files/scripts/utils.lua")
-		dofile("data/scripts/lib/utilities.lua") 
+		dofile("data/scripts/lib/utilities.lua")
 
-		GuiText( gui, 0, 0, " " )
+		GuiText(gui, 0, 0, " ")
 
-		GuiLayoutBeginHorizontal( gui, 0, 0, false, 15, 10 )
-		if GuiButton( gui, new_id(), 0, 0, "Enable All" )then
-			for k, v in ipairs(enchantments)do
-				RemoveSettingFlag("enchantments_"..v.id.."_disabled")
+		GuiLayoutBeginHorizontal(gui, 0, 0, false, 15, 10)
+		if GuiButton(gui, new_id(), 0, 0, "Enable All") then
+			for k, v in ipairs(enchantments) do
+				RemoveSettingFlag("enchantments_" .. v.id .. "_disabled")
 			end
 		end
-		if GuiButton( gui, new_id(), 0, 0, "Disable All" )then
-			for k, v in ipairs(enchantments)do
-				AddSettingFlag("enchantments_"..v.id.."_disabled")
+		if GuiButton(gui, new_id(), 0, 0, "Disable All") then
+			for k, v in ipairs(enchantments) do
+				AddSettingFlag("enchantments_" .. v.id .. "_disabled")
 			end
 		end
 		GuiLayoutEnd(gui)
 
-	
-	--	GuiBeginScrollContainer( gui, new_id(), 0, 0, 200, 150, true, 2, 2 )
+
+		--	GuiBeginScrollContainer( gui, new_id(), 0, 0, 200, 150, true, 2, 2 )
 		--GuiLayoutBeginVertical( gui, 0, 0, false, 2, 2 )
-		
+
 		function CustomImageButton(gui, id, x, y, image, scale, alpha)
 			hover_index = hover_index or {}
-			if(hover_index[id] == nil)then
+			if (hover_index[id] == nil) then
 				hover_index[id] = false
 			end
 			local old_scale = scale
@@ -204,90 +208,91 @@ function ModSettingsGui( gui, in_main_menu )
 			local x_offset = (w - old_w) / 2
 			local y_offset = (h - old_h) / 2
 			GuiImage(gui, id, x - x_offset, y - y_offset, image, alpha, scale)
-			local clicked, right_clicked, hovered, e_x, e_y, e_width, e_height, draw_x, draw_y, draw_width, draw_height = GuiGetPreviousWidgetInfo( gui )
-			hover_index[id] =  hovered
+			local clicked, right_clicked, hovered, e_x, e_y, e_width, e_height, draw_x, draw_y, draw_width, draw_height =
+			GuiGetPreviousWidgetInfo(gui)
+			hover_index[id] = hovered
 			return clicked
 		end
 
-		
 		crossed_index = 1
-		for k, v in ipairs(enchantments)do
-			
-			GuiLayoutBeginHorizontal( gui, 0, 0, false, 2, 2 )
+		for k, v in ipairs(enchantments) do
+			--print("Enchantment: "..v.id)
+			GuiLayoutBeginHorizontal(gui, 0, 0, false, 2, 2)
 
 			local w, h = GuiGetImageDimensions(gui, v.icon, 1)
 			local scale = 1
 
-			if(h > 9)then
+			if (h > 9) then
 				scale = (9 / h)
-			elseif(h < 9)then
+			elseif (h < 9) then
 				scale = (h / 9)
 			end
 
-			if CustomImageButton( gui, new_id(), 0, 0, v.icon, scale, 1 ) then
-				if(HasSettingFlag("enchantments_"..v.id.."_disabled"))then
-					RemoveSettingFlag("enchantments_"..v.id.."_disabled")
+			if CustomImageButton(gui, new_id(), 0, 0, v.icon, scale, 1) then
+				if (HasSettingFlag("enchantments_" .. v.id .. "_disabled")) then
+					RemoveSettingFlag("enchantments_" .. v.id .. "_disabled")
 				else
-					AddSettingFlag("enchantments_"..v.id.."_disabled")
+					AddSettingFlag("enchantments_" .. v.id .. "_disabled")
 				end
 			end
 
-			if(HasSettingFlag("enchantments_"..v.id.."_disabled"))then
-				GuiTooltip( gui, GameTextGetTranslatedOrNot(v.description), "by "..v.author.." \n[ Click to enable ]" );
+			if (HasSettingFlag("enchantments_" .. v.id .. "_disabled")) then
+				GuiTooltip(gui, GameTextGetTranslatedOrNot(v.description), "by " .. v.author .. " \n[ Click to enable ]");
 			else
-				GuiTooltip( gui, GameTextGetTranslatedOrNot(v.description), "by "..v.author.." \n[ Click to disable] " );
+				GuiTooltip(gui, GameTextGetTranslatedOrNot(v.description), "by " .. v.author .. " \n[ Click to disable] ");
 			end
 
 
-			if(HasSettingFlag("enchantments_"..v.id.."_disabled"))then
-				GuiZSetForNextWidget( gui, -1100 )
-				GuiOptionsAddForNextWidget( gui, GUI_OPTION.NonInteractive )
-				GuiImage( gui, new_id(), -11.5, -1.5, "mods/evaisa.enchantments/files/gfx/ui/overlay.png", 1, 1, 1, 0 )
+			if (HasSettingFlag("enchantments_" .. v.id .. "_disabled")) then
+				GuiZSetForNextWidget(gui, -1100)
+				GuiOptionsAddForNextWidget(gui, GUI_OPTION.NonInteractive)
+				GuiImage(gui, new_id(), -11.5, -1.5, "mods/evaisa.enchantments/files/gfx/ui/overlay.png", 1, 1, 1, 0)
 				--GuiImage( )
-				GuiZSetForNextWidget( gui, -1120 )
-				GuiImage( gui, new_id(), -13, 0, "mods/evaisa.enchantments/files/gfx/ui/crossed"..crossed_index..".png", 1, 1, 0 )
+				GuiZSetForNextWidget(gui, -1120)
+				GuiImage(gui, new_id(), -13, 0, "mods/evaisa.enchantments/files/gfx/ui/crossed" .. crossed_index .. ".png", 1, 1,
+					0)
 			end
 
-			if(crossed_index < 4)then
+			if (crossed_index < 4) then
 				crossed_index = crossed_index + 1
 			else
 				crossed_index = 1
 			end
 
-			
-			if(HasSettingFlag("enchantments_"..v.id.."_disabled"))then
-				if(GuiButton( gui, new_id(), -1.5, -0.5, GameTextGetTranslatedOrNot(v.name) ))then
-					if(HasSettingFlag("enchantments_"..v.id.."_disabled"))then
-						RemoveSettingFlag("enchantments_"..v.id.."_disabled")
+
+			if (HasSettingFlag("enchantments_" .. v.id .. "_disabled")) then
+				if (GuiButton(gui, new_id(), -1.5, -0.5, GameTextGetTranslatedOrNot(v.name))) then
+					if (HasSettingFlag("enchantments_" .. v.id .. "_disabled")) then
+						RemoveSettingFlag("enchantments_" .. v.id .. "_disabled")
 					else
-						AddSettingFlag("enchantments_"..v.id.."_disabled")
+						AddSettingFlag("enchantments_" .. v.id .. "_disabled")
 					end
 				end
 			else
-				if(GuiButton( gui, new_id(), 0, -0.5, GameTextGetTranslatedOrNot(v.name) ))then
-					if(HasSettingFlag("enchantments_"..v.id.."_disabled"))then
-						RemoveSettingFlag("enchantments_"..v.id.."_disabled")
+				if (GuiButton(gui, new_id(), 0, -0.5, GameTextGetTranslatedOrNot(v.name))) then
+					if (HasSettingFlag("enchantments_" .. v.id .. "_disabled")) then
+						RemoveSettingFlag("enchantments_" .. v.id .. "_disabled")
 					else
-						AddSettingFlag("enchantments_"..v.id.."_disabled")
+						AddSettingFlag("enchantments_" .. v.id .. "_disabled")
 					end
 				end
 			end
 
-			if(HasSettingFlag("enchantments_"..v.id.."_disabled"))then
-				GuiTooltip( gui, GameTextGetTranslatedOrNot(v.description), "by "..v.author.." \n[ Click to enable ]" );
+			if (HasSettingFlag("enchantments_" .. v.id .. "_disabled")) then
+				GuiTooltip(gui, GameTextGetTranslatedOrNot(v.description), "by " .. v.author .. " \n[ Click to enable ]");
 			else
-				GuiTooltip( gui, GameTextGetTranslatedOrNot(v.description), "by "..v.author.." \n[ Click to disable] " );
+				GuiTooltip(gui, GameTextGetTranslatedOrNot(v.description), "by " .. v.author .. " \n[ Click to disable] ");
 			end
-			
+
 			GuiLayoutEnd(gui)
-			
+			--print("Finished adding.")
 		end
 
 		--GuiLayoutEnd(gui)
-	--	GuiEndScrollContainer(gui)
+		--	GuiEndScrollContainer(gui)
 	else
-		GuiText( gui, 0, 0, "Due to Noita limitations, \nyou can only toggle individual enchantments \nonce you are in a game." )
+		GuiText(gui, 0, 0,
+			"Due to Noita limitations, \nyou can only toggle individual enchantments \nonce you are in a game.")
 	end
 	--GuiLayoutEnd(gui)
-
 end
