@@ -8,7 +8,7 @@ local now = GameGetFrameNum();
 local player_entity = GetUpdatedEntityID();
 local x, y = EntityGetTransform( player_entity );
 
-if now % 10 == 0 then
+if now % 100 == 31 then
 	SetRandomSeed(x + GameGetFrameNum() + StatsGetValue("world_seed"), y + GameGetFrameNum() + StatsGetValue("world_seed"))
 	local card_entities = EntityGetInRadiusWithTag( x, y, 500, "card_action" )
 	for k, v in ipairs(card_entities)do
