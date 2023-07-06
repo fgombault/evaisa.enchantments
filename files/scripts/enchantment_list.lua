@@ -486,8 +486,8 @@ enchantments = {
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = false, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
-		weight = 1.0, -- Rarity of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
+		weight = 0.5,                                                                -- Rarity of the enchantment
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
 			return true
@@ -592,8 +592,8 @@ enchantments = {
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = false, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
-		weight = 1.0, -- Rarity of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
+		weight = 5.0,                                                                -- Rarity of the enchantment
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
 			return true
@@ -831,8 +831,8 @@ enchantments = {
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
-		weight = 1.0, -- Rarity of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
+		weight = 0.5,                                                                -- Rarity of the enchantment
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
 			return true
@@ -850,8 +850,8 @@ enchantments = {
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
-		weight = 1.0, -- Rarity of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE },      -- Spell types that this enchantment can applied to
+		weight = 0.5,
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
 			return true
@@ -868,9 +868,9 @@ enchantments = {
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
-		weight = 1.0, -- Rarity of the enchantment
 		name = "Bane of Robots",                                                     -- Name of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
+		weight = 0.5,
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
 			return true
@@ -888,8 +888,8 @@ enchantments = {
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
-		weight = 1.0, -- Rarity of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
+		weight = 0.5,
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
 			return true
@@ -907,8 +907,8 @@ enchantments = {
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
-		weight = 1.0, -- Rarity of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
+		weight = 0.5,
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
 			return true
