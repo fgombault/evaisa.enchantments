@@ -146,7 +146,7 @@ enchantments = {
 	},
 	{
 		id = "cluster", -- Unique identifier
-		name = "Cluster", -- Name of the enchantment
+		name = "Draw & Multicast",                                                                                   -- Name of the enchantment
 		description = "Draw an additional spell. Increases the multicast number and turns modifiers into multicasts.", -- Description of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/cluster/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
@@ -173,13 +173,13 @@ enchantments = {
 	},
 	{
 		id = "flow", -- Unique identifier
-		name = "Flow", -- Name of the enchantment
 		description = "Cast another spell.", -- Description of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/flow/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = false, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
 		weight = 1.0, -- Rarity of the enchantment
+		name = "Cast another",                                                       -- Name of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
@@ -192,13 +192,13 @@ enchantments = {
 	},
 	{
 		id = "smol", -- Unique identifier
-		name = "Smol", -- Name of the enchantment
 		description = "Cast a shrunken projectile.", -- Description of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/smol/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = false, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
 		weight = 1.0, -- Rarity of the enchantment
+		name = "Small",                                                              -- Name of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
@@ -306,13 +306,13 @@ enchantments = {
 	},
 	{
 		id = "power", -- Unique identifier
-		name = "Power", -- Name of the enchantment
 		description = "Spells do extra damage.", -- Description of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/power/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
 		weight = 1.0, -- Rarity of the enchantment
+		name = "Damaging",                                                           -- Name of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
@@ -349,8 +349,8 @@ enchantments = {
 	},
 	{
 		id = "expensive", -- Unique identifier
-		name = "Expensive", -- Name of the enchantment
 		description = "Spells cost money but do more damage.", -- Description of the enchantment
+		name = "Quality",                                                            -- Name of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/expensive/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
@@ -500,8 +500,8 @@ enchantments = {
 	},
 	{
 		id = "energetic", -- Unique identifier
-		name = "Arcane", -- Name of the enchantment
 		description = "Projectiles have enhanced explosive properties.", -- Description of the enchantment
+		name = "Explosive",                                                          -- Name of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/energetic/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
@@ -520,13 +520,13 @@ enchantments = {
 	},
 	{
 		id = "rebound", -- Unique identifier
-		name = "Rebound", -- Name of the enchantment
 		description = "Projectiles bounce more.", -- Description of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/rebound/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
 		weight = 1.0, -- Rarity of the enchantment
+		name = "Bouncy",                                                             -- Name of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
@@ -546,13 +546,13 @@ enchantments = {
 	},
 	{
 		id = "heavy", -- Unique identifier
-		name = "Bulkiness", -- Name of the enchantment
 		description = "Projectiles weigh more.", -- Description of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/heavy/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
 		weight = 1.0, -- Rarity of the enchantment
+		name = "Heavy",                                                              -- Name of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
@@ -863,13 +863,13 @@ enchantments = {
 	},	
 	{
 		id = "disrupt", -- Unique identifier
-		name = "Disrupt", -- Name of the enchantment
 		description = "Deal more damage to robot enemies.", -- Description of the enchantment
 		icon = "mods/evaisa.enchantments/files/enchantment_data/disrupt/icon.png", -- Settings icon
 		author = "evaisa", -- The author of the enchantment
 		is_stackable = true, -- Can the enchantment be stacked?
 		card_extra_entities = {}; -- Entities added to the spell card
 		weight = 1.0, -- Rarity of the enchantment
+		name = "Bane of Robots",                                                     -- Name of the enchantment
 		valid_spell_types = { ACTION_TYPE_PROJECTILE, ACTION_TYPE_STATIC_PROJECTILE }, -- Spell types that this enchantment can applied to
 		xp = 10,
 		check = function(action) -- Function to check if the enchantment can be applied to the action
