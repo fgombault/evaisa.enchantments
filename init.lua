@@ -20,6 +20,8 @@ function OnPlayerSpawned(player)
 	local wallet_component = EntityGetFirstComponentIncludingDisabled(player, "WalletComponent")
 	ComponentSetValue2(wallet_component, "money", 5000)
 	]]
+
+	dofile("data/scripts/gun/gun.lua")
 end
 
 function OnMagicNumbersAndWorldSeedInitialized()

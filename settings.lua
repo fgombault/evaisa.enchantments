@@ -24,6 +24,13 @@ mod_settings =
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
 			{
+				id = "disable_altar",
+				ui_name = "Disable Altar",
+				ui_description = "Disable the altar altogether, enchantments can still spawn with items if Loot Enchantments is enabled.",
+				value_default = false,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			},
+			{
 				id = "enable_random_enchantments",
 				ui_name = "Enable Loot Enchantments",
 				ui_description = "Allow spells found in the world to have enchantments applied to them.",
