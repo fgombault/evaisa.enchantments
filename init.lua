@@ -12,9 +12,9 @@ function OnPlayerSpawned(player)
 		script_source_file="mods/evaisa.enchantments/files/scripts/player_update.lua",
 	});
 
-	local x, y = EntityGetTransform(player)
-
-	EntityLoad("mods/evaisa.enchantments/files/entities/enchantment_table/entity.xml", x + 420, y)
+	-- local x, y = EntityGetTransform(player)
+	--
+	-- EntityLoad("mods/evaisa.enchantments/files/entities/enchantment_table/entity.xml", x + 420, y)
 
 	--[[
 	local wallet_component = EntityGetFirstComponentIncludingDisabled(player, "WalletComponent")
